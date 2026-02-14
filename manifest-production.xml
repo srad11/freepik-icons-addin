@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- PRODUCTION MANIFEST - Points to GitHub Pages instead of localhost -->
+<!-- Replace https://srad11.github.io/freepik-icons-addin with your actual URL, e.g. https://yourusername.github.io/freepik-icons-addin -->
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+
+  <Id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>FreePik Icons</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="FreePik Icons" />
+  <Description DefaultValue="Search, generate, and insert icons from Freepik directly into your PowerPoint presentations." />
+  <IconUrl DefaultValue="https://srad11.github.io/freepik-icons-addin/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://srad11.github.io/freepik-icons-addin/assets/icon-80.png" />
+  <SupportUrl DefaultValue="https://freepik.com" />
+
+  <AppDomains>
+    <AppDomain>https://api.freepik.com</AppDomain>
+    <AppDomain>https://srad11.github.io/freepik-icons-addin</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Presentation" />
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://srad11.github.io/freepik-icons-addin/taskpane.html" />
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Presentation">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="FreePik.GetStarted.Title" />
+            <Description resid="FreePik.GetStarted.Description" />
+            <LearnMoreUrl resid="FreePik.GetStarted.LearnMoreUrl" />
+          </GetStarted>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabInsert">
+              <Group id="FreePikIconsGroup">
+                <Label resid="FreePik.Group.Label" />
+                <Icon>
+                  <bt:Image size="16" resid="FreePik.Icon.16" />
+                  <bt:Image size="32" resid="FreePik.Icon.32" />
+                  <bt:Image size="80" resid="FreePik.Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="FreePikTaskpaneButton">
+                  <Label resid="FreePik.TaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="FreePik.TaskpaneButton.Label" />
+                    <Description resid="FreePik.TaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="FreePik.Icon.16" />
+                    <bt:Image size="32" resid="FreePik.Icon.32" />
+                    <bt:Image size="80" resid="FreePik.Icon.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+                    <SourceLocation resid="FreePik.Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="FreePik.Icon.16" DefaultValue="https://srad11.github.io/freepik-icons-addin/assets/icon-16.png" />
+        <bt:Image id="FreePik.Icon.32" DefaultValue="https://srad11.github.io/freepik-icons-addin/assets/icon-32.png" />
+        <bt:Image id="FreePik.Icon.80" DefaultValue="https://srad11.github.io/freepik-icons-addin/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="FreePik.Taskpane.Url" DefaultValue="https://srad11.github.io/freepik-icons-addin/taskpane.html" />
+        <bt:Url id="FreePik.GetStarted.LearnMoreUrl" DefaultValue="https://freepik.com/api" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="FreePik.GetStarted.Title" DefaultValue="FreePik Icons Add-in" />
+        <bt:String id="FreePik.Group.Label" DefaultValue="FreePik Icons" />
+        <bt:String id="FreePik.TaskpaneButton.Label" DefaultValue="FreePik Icons" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="FreePik.GetStarted.Description" DefaultValue="Search, generate, and insert icons from Freepik into your presentations." />
+        <bt:String id="FreePik.TaskpaneButton.Tooltip" DefaultValue="Open the FreePik Icons panel to search, generate, and insert icons." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreePik Icons</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+  <!-- App is always visible - no hidden gating -->
+  <div id="app" class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-logo">
+        <svg class="header-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span class="header-title">FreePik Icons</span>
+      </div>
+    </header>
+
+    <!-- Tab bar -->
+    <nav class="tab-bar" role="tablist">
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="search" title="Search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <span>Search</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="ai-generate" title="AI Generate">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span>AI</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="favorites" title="Favorites">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>Favs</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="history" title="History">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>History</span>
+      </button>
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="settings" title="Settings">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span>Settings</span>
+      </button>
+    </nav>
+
+    <!-- Tab content area -->
+    <main class="tab-content">
+
+      <!-- Search Tab -->
+      <section id="tab-search" class="tab-panel" role="tabpanel" style="display:none;">
+        <div class="search-bar">
+          <svg class="search-bar-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          <input type="text" id="search-input" class="search-input" placeholder="Search icons..." autocomplete="off" />
+        </div>
+
+        <div class="filters-row">
+          <select id="filter-style" class="filter-select" title="Style">
+            <option value="">All Styles</option>
+          </select>
+          <select id="filter-family" class="filter-select" title="Family">
+            <option value="">All Families</option>
+          </select>
+          <select id="filter-order" class="filter-select" title="Order">
+            <option value="relevance">Relevance</option>
+            <option value="recent">Recent</option>
+          </select>
+        </div>
+
+        <div class="format-row">
+          <select id="search-format" class="filter-select" title="Download format">
+            <option value="svg">SVG</option>
+            <option value="png" selected>PNG</option>
+            <option value="gif">GIF</option>
+            <option value="mp4">MP4</option>
+            <option value="aep">AEP</option>
+            <option value="json">JSON</option>
+            <option value="psd">PSD</option>
+            <option value="eps">EPS</option>
+          </select>
+          <select id="search-png-size" class="filter-select" title="PNG size">
+            <option value="512">512px</option>
+            <option value="256">256px</option>
+            <option value="128" selected>128px</option>
+            <option value="64">64px</option>
+            <option value="32">32px</option>
+            <option value="24">24px</option>
+            <option value="16">16px</option>
+          </select>
+        </div>
+
+        <div id="search-results" class="icon-grid"></div>
+        <div id="search-loading" class="loading-overlay" style="display:none;">
+          <div class="spinner"></div>
+          <span class="loading-text">Searching...</span>
+        </div>
+        <div id="search-empty" class="empty-state" style="display:none;">
+          <p>No icons found. Try a different search term.</p>
+        </div>
+        <div id="search-error" class="error-state" style="display:none;">
+          <p id="search-error-msg">Something went wrong.</p>
+          <button id="search-retry-btn" class="btn btn-secondary btn-sm">Retry</button>
+        </div>
+        <div id="search-pagination" class="pagination" style="display:none;">
+          <button id="page-prev" class="btn btn-secondary btn-sm" disabled>Prev</button>
+          <span id="page-info" class="page-info">Page 1 of 1</span>
+          <button id="page-next" class="btn btn-secondary btn-sm">Next</button>
+        </div>
+      </section>
+
+      <!-- AI Generate Tab -->
+      <section id="tab-ai-generate" class="tab-panel" role="tabpanel" style="display:none;">
+        <div class="ai-section">
+          <label for="ai-prompt" class="field-label">Describe your icon</label>
+          <textarea id="ai-prompt" class="ai-prompt-input" rows="3" placeholder="Describe the icon you want..."></textarea>
+          <label class="field-label">Style</label>
+          <div class="radio-group" id="ai-style-group">
+            <label class="radio-label"><input type="radio" name="ai-style" value="solid" checked /> Solid</label>
+            <label class="radio-label"><input type="radio" name="ai-style" value="outline" /> Outline</label>
+            <label class="radio-label"><input type="radio" name="ai-style" value="color" /> Color</label>
+            <label class="radio-label"><input type="radio" name="ai-style" value="flat" /> Flat</label>
+            <label class="radio-label"><input type="radio" name="ai-style" value="sticker" /> Sticker</label>
+          </div>
+          <label class="field-label">Format</label>
+          <div class="radio-group" id="ai-format-group">
+            <label class="radio-label"><input type="radio" name="ai-format" value="png" checked /> PNG</label>
+            <label class="radio-label"><input type="radio" name="ai-format" value="svg" /> SVG</label>
+          </div>
+          <button id="ai-generate-btn" class="btn btn-primary btn-block">Generate Icon</button>
+        </div>
+        <div id="ai-loading" class="ai-preview-area" style="display:none;">
+          <div class="spinner"></div>
+          <p id="ai-status-text" class="ai-status-text">Generating your icon...</p>
+        </div>
+        <div id="ai-preview" class="ai-preview-area" style="display:none;">
+          <img id="ai-preview-img" class="ai-preview-img" src="" alt="Generated icon" />
+          <div class="ai-preview-actions">
+            <button id="ai-insert-btn" class="btn btn-primary">Insert into Slide</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Favorites Tab -->
+      <section id="tab-favorites" class="tab-panel" role="tabpanel" style="display:none;">
+        <div id="favorites-grid" class="icon-grid"></div>
+        <div id="favorites-empty" class="empty-state">
+          <p>No favorites yet. Heart icons from search to save them here.</p>
+        </div>
+      </section>
+
+      <!-- History Tab -->
+      <section id="tab-history" class="tab-panel" role="tabpanel" style="display:none;">
+        <div class="history-header">
+          <button id="clear-history-btn" class="btn btn-secondary btn-sm">Clear History</button>
+        </div>
+        <div id="history-list" class="icon-grid"></div>
+        <div id="history-empty" class="empty-state">
+          <p>No history yet. Icons you insert will appear here.</p>
+        </div>
+      </section>
+
+      <!-- Settings Tab (visible by default) -->
+      <section id="tab-settings" class="tab-panel" role="tabpanel">
+        <fieldset class="settings-fieldset">
+          <legend class="settings-legend">API Key</legend>
+          <p class="about-text" style="margin-bottom:8px;">Get your key at <a href="https://www.freepik.com/api" target="_blank">freepik.com/api</a></p>
+          <div class="field-group">
+            <input type="password" id="settings-api-key" class="text-input" placeholder="Enter your Freepik API key" />
+          </div>
+          <div class="settings-btn-row">
+            <button id="save-api-key-btn" class="btn btn-primary btn-sm">Save Key</button>
+            <button id="test-api-key-btn" class="btn btn-secondary btn-sm">Test Connection</button>
+          </div>
+          <div id="api-key-status" class="status-indicator" style="display:none;"></div>
+        </fieldset>
+        <fieldset class="settings-fieldset">
+          <legend class="settings-legend">Default Preferences</legend>
+          <div class="field-group">
+            <label for="default-format" class="field-label">Default Format</label>
+            <select id="default-format" class="filter-select">
+              <option value="svg">SVG</option>
+              <option value="png" selected>PNG</option>
+              <option value="gif">GIF</option>
+              <option value="mp4">MP4</option>
+              <option value="aep">AEP</option>
+              <option value="json">JSON</option>
+              <option value="psd">PSD</option>
+              <option value="eps">EPS</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="default-png-size" class="field-label">Default PNG Size</label>
+            <select id="default-png-size" class="filter-select">
+              <option value="512">512px</option>
+              <option value="256">256px</option>
+              <option value="128" selected>128px</option>
+              <option value="64">64px</option>
+              <option value="32">32px</option>
+              <option value="24">24px</option>
+              <option value="16">16px</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="default-ai-style" class="field-label">Default AI Style</label>
+            <select id="default-ai-style" class="filter-select">
+              <option value="solid" selected>Solid</option>
+              <option value="outline">Outline</option>
+              <option value="color">Color</option>
+              <option value="flat">Flat</option>
+              <option value="sticker">Sticker</option>
+            </select>
+          </div>
+          <button id="save-prefs-btn" class="btn btn-primary btn-sm">Save Preferences</button>
+        </fieldset>
+        <fieldset class="settings-fieldset">
+          <legend class="settings-legend">About</legend>
+          <p class="about-text">FreePik Icons Add-in v1.0.0</p>
+          <p class="about-text">
+            <a href="https://www.freepik.com" target="_blank" rel="noopener noreferrer">Visit Freepik</a>
+            &middot;
+            <a href="https://docs.freepik.com" target="_blank" rel="noopener noreferrer">API Docs</a>
+          </p>
+        </fieldset>
+      </section>
+    </main>
+
+    <!-- Toast notification area -->
+    <div id="toast-container" class="toast-container"></div>
+  </div>
+
+</body>
+</html>

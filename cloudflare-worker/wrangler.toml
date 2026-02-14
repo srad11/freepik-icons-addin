@@ -1,0 +1,7 @@
+name = "freepik-icons-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+account_id = "22c8eef5e032d3f8668f88a821843c72"
+
+[vars]
+ALLOWED_ORIGIN = "*"
