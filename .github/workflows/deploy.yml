@@ -28,6 +28,8 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          CF_WORKER_URL: https://freepik-icons-proxy.srad11.workers.dev/v1
 
       - uses: actions/upload-pages-artifact@v3
         with:

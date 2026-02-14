@@ -42,7 +42,7 @@ echo "  Created dist/manifest-production.xml"
 # 2. Build with the Cloudflare Worker URL
 echo "Building for production..."
 cd "$PROJECT_DIR"
-CF_WORKER_URL="$CF_WORKER_URL" npm run build
+CF_WORKER_URL="${CF_WORKER_URL}/v1" npm run build
 echo "  Build complete"
 
 # 3. Copy the production manifest to dist
